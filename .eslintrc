@@ -1,0 +1,106 @@
+{
+  "plugins": ["prettier", "@typescript-eslint", "react-hooks", "unicorn"],
+  "extends": [
+    "airbnb-typescript",
+    "react-app",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint",
+    "prettier",
+    "plugin:import/typescript",
+    "plugin:react/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    // create react app default rules
+    "object-curly-spacing": ["warn", "always"],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "error",
+      {
+        "ignoreRestArgs": true
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 80,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true
+      }
+    ],
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-boolean-value": "off",
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/destructuring-assignment": "off",
+
+    // unicorn
+    // https://github.com/sindresorhus/eslint-plugin-unicorn
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/no-array-instanceof": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/no-unsafe-regex": "off",
+    "unicorn/throw-new-error": "error",
+    "unicorn/regex-shorthand": "error",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "kebabCase"
+      }
+    ],
+
+    // Imports
+    "import/extensions": ["error", "never", { "svg": "always" }],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.ts",
+          "**/*.spec.ts",
+          "**/*.test.tsx",
+          "**/*.spec.tsx",
+          "**/__test__/*"
+        ]
+      }
+    ]
+  }
+}
