@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --open",
     "typescript": "tsc",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color --max-warnings=0",
-    "pre-push-parallel": "npm run lint && npm run typescript"
+    "pre-push": "npm run lint && npm run typescript"
   },
   "husky": {
     "hooks": {
