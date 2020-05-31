@@ -44,7 +44,7 @@
     "eslint-plugin-react-hooks": "4.0.4",
     "eslint-plugin-unicorn": "20.1.0",
     "html-webpack-plugin": "4.3.0",
-    "husky": "4.2.5",
+    "husky": "^4.2.5",
     "prettier": "2.0.5",
     "prettier-eslint": "10.1.1",
     "prettier-eslint-cli": "5.0.0",
