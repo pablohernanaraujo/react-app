@@ -28,4 +28,12 @@ module.exports = {
       template: path.join(__dirname, 'public', 'index.html'),
     }),
   ],
+  devServer: {
+    open: true,
+    quiet: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    }
+  }
 };
