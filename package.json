@@ -8,11 +8,11 @@
     "dev": "webpack-dev-server",
     "typescript": "tsc",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color --max-warnings=0",
-    "pre-push": "npm run lint && npm run typescript"
+    "pre-push": ""
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run pre-pushs"
+      "pre-push": "npm run pre-push"
     }
   },
   "keywords": [],
