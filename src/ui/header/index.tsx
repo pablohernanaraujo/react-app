@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
-import styled from '../../theme/styled-components';
+
+import styled from 'Theme/styled-components';
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.Palette.greyBlue[500]};

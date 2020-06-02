@@ -20,6 +20,9 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true
+      },
+      "webpack": {
+        "config": "webpack.config.js"
       }
     }
   },

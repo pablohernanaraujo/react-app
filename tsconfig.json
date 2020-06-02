@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "Theme": ["./theme"],
+      "Theme/*": ["./theme/*"],
+      "Ui": ["./ui"],
+      "Ui/*": ["./ui/*"]
+    },
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
