@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
-    "typescript": "tsc",
+    "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color --max-warnings=0",
     "pre-push": "npm run lint && npm run typescript"
   },

@@ -12,7 +12,7 @@ module.exports = {
   },
   target: 'web',
   resolve: {
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.ts', '.tsx', '.js'],
     alias: {
       "Theme": path.resolve(__dirname, 'src/theme'),
       "Ui": path.resolve(__dirname, 'src/ui')
