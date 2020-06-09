@@ -1,3 +1,4 @@
 dist/*
 public/*
 webpack.config.js
+jest.config.js

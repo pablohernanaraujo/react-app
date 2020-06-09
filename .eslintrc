@@ -90,20 +90,6 @@
     "react/jsx-wrap-multilines": "off",
     "react/destructuring-assignment": "off",
 
-    // ESLint rules
-    "global-require": "off",
-    "no-plusplus": "off",
-    "complexity": ["error", { "max": 12 }],
-    "max-depth": ["error", { "max": 3 }],
-    "max-nested-callbacks": ["error", { "max": 2 }],
-    "max-params": ["error", { "max": 3 }],
-    "max-statements": ["error", { "max": 12 }],
-    "arrow-body-style": ["error", "as-needed"],
-    "object-property-newline": [
-      "error",
-      { "allowAllPropertiesOnSameLine": false },
-    ],
-
     // unicorn
     // https://github.com/sindresorhus/eslint-plugin-unicorn
     "unicorn/no-abusive-eslint-disable": "error",
@@ -133,7 +119,21 @@
           "**/__test__/*"
         ]
       }
-    ]
+    ],
+
+    // ESLint rules
+    "global-require": "off",
+    "no-plusplus": "off",
+    "complexity": ["error", { "max": 12 }],
+    "max-depth": ["error", { "max": 3 }],
+    "max-nested-callbacks": ["error", { "max": 2 }],
+    "max-params": ["error", { "max": 3 }],
+    "max-statements": ["error", { "max": 12 }],
+    "arrow-body-style": ["error", "as-needed"],
+    "object-property-newline": [
+      "error",
+      { "allowAllPropertiesOnSameLine": false }
+    ],
   },
   "overrides": [
     {
@@ -146,13 +146,15 @@
         "jest": true
       },
       "rules": {
-        "max-statements": ["error", { "max": 14 }],
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-ts-ignore": "off"
       }
     },
     {
-      "files": ["*/**/*.js"]
+      "files": ["*/**/*.js"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off"
+      },
     }
   ]
 }
