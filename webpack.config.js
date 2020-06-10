@@ -1,8 +1,9 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
   entry: {
     app: path.join(__dirname, 'src', 'index.tsx'),
   },
@@ -15,7 +16,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       "Theme": path.resolve(__dirname, 'src/theme'),
-      "Ui": path.resolve(__dirname, 'src/ui')
+      "Ui": path.resolve(__dirname, 'src/ui'),
     }
   },
   module: {
@@ -24,20 +25,28 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: '/node_modules/',
-      },
-    ],
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
+    new CleanWebpackPlugin(),
+    new webpack.ProgressPlugin(),
   ],
   devServer: {
     open: true,
     quiet: true,
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
+    }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      name: 'vendor',
     }
   }
 };
