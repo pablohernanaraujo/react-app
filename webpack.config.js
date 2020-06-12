@@ -25,6 +25,10 @@ module.exports = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: '/node_modules/',
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
       }
     ]
   },
@@ -41,12 +45,16 @@ module.exports = {
     overlay: {
       warnings: true,
       errors: true,
-    }
+    },
+    port: 9000,
   },
   optimization: {
     splitChunks: {
       chunks: 'all',
       name: 'vendor',
     }
-  }
+  },
+  stats: {
+    colors: true,
+  },
 };
