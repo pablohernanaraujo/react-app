@@ -1,7 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -15,9 +14,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
-      "Theme": path.resolve(__dirname, 'src/theme'),
-      "Ui": path.resolve(__dirname, 'src/ui'),
-    }
+      Theme: path.resolve(__dirname, 'src/theme'),
+      Ui: path.resolve(__dirname, 'src/ui'),
+    },
   },
   module: {
     rules: [
@@ -27,17 +26,17 @@ module.exports = {
         exclude: '/node_modules/',
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ["file-loader"],
-      }
-    ]
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: ['file-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
+      favicon: './public/favicon.ico',
     }),
     new CleanWebpackPlugin(),
-    new webpack.ProgressPlugin(),
   ],
   devServer: {
     open: true,
@@ -52,7 +51,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       name: 'vendor',
-    }
+    },
   },
   stats: {
     colors: true,
